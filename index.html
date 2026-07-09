@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowPilot AI — Your growth, on autopilot</title>
+<meta name="description" content="FlowPilot AI wires the newest AI automation into your marketing, sales, and DMs so the busywork runs itself. AI automation agency built for Tashkent.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='3' y='3' width='94' height='94' rx='26' fill='%23C2603F'/%3E%3Cpath d='M24 72 Q44 70 56 50 T80 24' stroke='%23F4F1EA' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3Cpath d='M80 24 L65 26 M80 24 L78 40' stroke='%23F4F1EA' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='24' cy='72' r='5.5' fill='%23F4F1EA'/%3E%3C/svg%3E">
+
+<!-- ============================================================
+     CONFIG — Ismoil, edit these. Search "EDIT ME".
+     ============================================================ -->
+<script>
+  window.FP_CONFIG = {
+    telegram: "https://t.me/farkhodoff",
+    // EDIT ME: optional WhatsApp (leave "" to hide). e.g. "https://wa.me/998900000000"
+    whatsapp: "",
+    // EDIT ME: hidden until a real inbox exists. Set e.g. "hello@flowpilot.ai" once the domain email works.
+    email: "",
+    // EDIT ME: instagram handle url (leave "" to hide)
+    instagram: "https://instagram.com/flowpilot.ai",
+    // Live demo bot (Aida, the AI front-desk demo) — already deployed, real handle
+    demoBot: "https://t.me/flow_pilot_ai_bot"
+  };
+  // i18n: EN lives in the markup (source of truth). FP_setLang(lang) stores the
+  // choice and reloads; the dict below is applied before the scroll choreography
+  // splits any text, so everything stays in sync. Values may contain HTML.
+  window.FP_COPY = {
+    ru: {
+      "title": "FlowPilot AI — Ваш рост на автопилоте",
+      "meta.desc": "FlowPilot AI подключает новейшую AI-автоматизацию к вашему маркетингу, продажам и переписке. Агентство AI-автоматизации в Ташкенте.",
+      "skip": "К содержанию",
+      "nav.services": "Услуги", "nav.demo": "Живое демо", "nav.offer": "Для первых клиентов", "nav.cta": "Написать в Telegram",
+      "hero.h1": "Ваш рост,<br>на <span class=\"k\">автопилоте</span>.",
+      "hero.sub": "Мы FlowPilot, агентство AI-автоматизации в Ташкенте. Подключаем новейший AI к вашему маркетингу, продажам и переписке, чтобы рутина работала сама.",
+      "hero.cta1": "Бесплатный разбор", "hero.cta2": "Попробовать бота", "hero.scroll": "Листайте",
+      "b1.h": "Каждая заявка, на которую вы отвечаете вручную, однажды будет <span class=\"k\">упущена</span>.",
+      "b1.p": "Сообщения копятся. Фоллоу-апы забываются. Лучшие сотрудники сорок раз в день копируют один и тот же ответ. Это не проблема людей. Это проблема процессов.",
+      "b2.h": "Поэтому мы переводим рутину на <span class=\"k\">AI</span>.",
+      "b2.p": "Боты отвечают за секунды, на узбекском и русском. Фоллоу-апы отправляются сами. Записи попадают в календарь, пока телефон лежит в кармане.",
+      "b3.h": "Дальше это работает. И не <span class=\"k\">останавливается</span>.",
+      "b3.p": "Лиды квалифицированы, записи назначены, отчёты отправлены. Днём и ночью. Вы смотрите на цифры, а не в переписку.",
+      "b3.cta1": "Бесплатный разбор", "b3.cta2": "Что мы делаем",
+      "services.h": "Что мы ставим на автопилот.",
+      "services.lead": "Три услуги, одна цель: записи клиентов без рутины. Сначала Telegram и Instagram, потому что именно там покупает Ташкент.",
+      "services.s1.h": "AI-автоматизации",
+      "services.s1.p": "Кастомные AI-агенты и процессы, которые берут на себя повторяющуюся работу: команда перестаёт копировать и начинает закрывать сделки.",
+      "services.s1.i1": "Боты для заявок в Telegram и Instagram, говорящие вашим голосом",
+      "services.s1.i2": "Автоответы, запись и фоллоу-апы, которые не спят",
+      "services.s1.i3": "Внутренняя автоматизация: сметы, отчёты, онбординг",
+      "services.s2.h": "Личный бренд",
+      "services.s2.p": "Для основателей и руководителей, которых должны знать. Строим экспертный контент в Instagram и ведём его за вас.",
+      "services.s2.i1": "Позиционирование и контент-стратегия для вашего лица, а не логотипа",
+      "services.s2.i2": "Reels, карусели и хуки: производим и публикуем",
+      "services.s2.i3": "Рост, который превращает подписчиков во входящих клиентов",
+      "services.s3.h": "Маркетинг, который продаёт",
+      "services.s3.p": "SMM, сайты и лидогенерация ради записей клиентов, а не лайков.",
+      "services.s3.i1": "Сайты и лендинги, заточенные под конверсию",
+      "services.s3.i2": "Ведение соцсетей с настоящим контент-конвейером",
+      "services.s3.i3": "Платный и органический трафик, измеряемый записями",
+      "demo.h": "Напишите нашему боту. Посмотрите, как он работает.",
+      "demo.p": "Аида, живой AI-администратор, собранный так же, как мы соберём вашего. Напишите ей в Telegram: она квалифицирует заявку, предложит время и подтвердит запись. На узбекском, русском или английском.",
+      "demo.cta": "Открыть демо-бота",
+      "flow.n1": "Приходит сообщение", "flow.n1s": "Telegram или Instagram",
+      "flow.n2": "Аида отвечает за секунды", "flow.n2s": "и квалифицирует заявку",
+      "flow.n3": "Запись назначена", "flow.n3s": "сразу в календарь",
+      "flow.n4": "Вы видите цифры", "flow.n4s": "в простом отчёте",
+      "market.h": "Ташкент покупает с телефона, в чате, прямо сейчас.",
+      "market.p": "Ваши клиенты уже каждый день в Telegram и Instagram. Большинство агентств здесь всё ещё продают SEO по часам. Мы работаем там, где рынок живёт.",
+      "market.s1": "пользователей Telegram, около 85% страны. Настоящая витрина.",
+      "market.s2": "пользователей Instagram, где строятся личные бренды.",
+      "market.s3": "выходят в интернет с телефона. Mobile-first не обсуждается.",
+      "market.s4": "медианный возраст. Молодая, цифровая аудитория.",
+      "market.note": "Почти никто здесь не начинает с AI-автоматизации и агентных процессов. Этот разрыв и есть наша территория.",
+      "offer.h": "Берём первых 3 клиентов-основателей.",
+      "offer.p": "Мы новые и не скрываем этого. За раннее доверие вы получаете всё наше внимание, стартовые цены и команду, для которой ваши результаты станут нашим портфолио. Потому что так и есть.",
+      "offer.i1": "Стартовая цена, зафиксированная навсегда",
+      "offer.i2": "Прямая связь с основателями, без менеджеров-посредников",
+      "offer.i3": "Результаты оформляем вместе как публичный кейс",
+      "offer.seats": "Осталось · 3 места", "offer.big": "Начнём с бесплатного разбора",
+      "offer.promise": "Заявки у вас во входящих, или вы не платите за эту неделю.",
+      "offer.cta": "Занять место", "offer.fine": "Без давления и жаргона. Просто понятный план.",
+      "process.h": "От первого сообщения до автопилота.",
+      "process.s1.h": "Бесплатный разбор",
+      "process.s1.p": "Короткий созвон: находим, где вы теряете время и заявки. Вы уходите со списком того, что автоматизировать первым, даже если не работаете с нами.",
+      "process.s2.h": "Собираем систему",
+      "process.s2.p": "Проектируем и запускаем автоматизации, контент или сайт под ключ. Вы смотрите, мы дорабатываем, запуск быстрый.",
+      "process.s3.h": "Работает само, вы растёте",
+      "process.s3.p": "Рутина крутится сама, а вы получаете простой отчёт: записи, сэкономленные часы, отправленные ответы. Масштабируетесь, мы настраиваем.",
+      "contact.h": "Хватит делать руками.",
+      "contact.p": "Одно сообщение в Telegram. Мы ответим, где вы теряете время и что автоматизировать первым. Бесплатно.",
+      "contact.cta": "Написать в Telegram",
+      "footer.tag": "меньше рутины, больше результата"
+    },
+    uz: {
+      "title": "FlowPilot AI — O'sishingiz avtopilotda",
+      "meta.desc": "FlowPilot AI eng yangi AI-avtomatlashtirishni marketing, savdo va yozishmalaringizga ulaydi. Toshkentdagi AI-avtomatlashtirish agentligi.",
+      "skip": "Kontentga o'tish",
+      "nav.services": "Xizmatlar", "nav.demo": "Jonli demo", "nav.offer": "Ilk mijozlar uchun", "nav.cta": "Telegramda yozing",
+      "hero.h1": "O'sishingiz<br><span class=\"k\">avtopilotda</span>.",
+      "hero.sub": "Biz FlowPilot, Toshkentdagi AI-avtomatlashtirish agentligi. Eng yangi AI'ni marketing, savdo va yozishmalaringizga ulaymiz, shunda yumushlar o'z-o'zidan bajariladi.",
+      "hero.cta1": "Bepul tahlil olish", "hero.cta2": "Botni sinab ko'ring", "hero.scroll": "Pastga",
+      "b1.h": "Qo'lda javob bergan har bir lidingiz bir kun <span class=\"k\">boy beriladi</span>.",
+      "b1.p": "Xabarlar to'planadi. Follow-uplar unutiladi. Eng yaxshi xodimlaringiz bir xil javobni kuniga qirq marta ko'chiradi. Bu odamlar muammosi emas. Bu jarayon muammosi.",
+      "b2.h": "Shuning uchun yumushlarni <span class=\"k\">AI</span> orqali yo'naltiramiz.",
+      "b2.p": "Botlar soniyalarda javob beradi, o'zbek va rus tillarida. Follow-uplar o'zi jo'naydi. Telefon cho'ntagingizda yotganda yozuvlar kalendaringizga tushadi.",
+      "b3.h": "Keyin u ishlaydi. To'xtamasdan <span class=\"k\">ishlayveradi</span>.",
+      "b3.p": "Lidlar saralangan, qabullar belgilangan, hisobotlar yuborilgan. Kunu tun. Siz yozishmalarni emas, raqamlarni ko'rasiz.",
+      "b3.cta1": "Bepul tahlil olish", "b3.cta2": "Nima qilishimiz",
+      "services.h": "Nimalarni avtopilotga qo'yamiz.",
+      "services.lead": "Uchta xizmat, bitta maqsad: yumushlarsiz band qilingan qabullar. Avvalo Telegram va Instagram, chunki Toshkent aynan shu yerda xarid qiladi.",
+      "services.s1.h": "AI-avtomatlashtirish",
+      "services.s1.p": "Takrorlanadigan ishlarni o'z zimmasiga oladigan maxsus AI-agentlar va jarayonlar: jamoa nusxa ko'chirishni to'xtatib, bitim yopishni boshlaydi.",
+      "services.s1.i1": "Telegram va Instagram uchun lid-botlar, sizning ohangingizda",
+      "services.s1.i2": "Uxlamaydigan avtojavoblar, yozuv va follow-uplar",
+      "services.s1.i3": "Ichki avtomatlashtirish: hisob-kitob, hisobot, onboarding",
+      "services.s2.h": "Shaxsiy brend",
+      "services.s2.p": "Tanilishi kerak bo'lgan asoschilar va rahbarlar uchun. Instagramda ekspert kontentni quramiz va o'zimiz yuritamiz.",
+      "services.s2.i1": "Logotip emas, yuzingiz uchun pozitsiya va kontent-strategiya",
+      "services.s2.i2": "Reels, karusel va huklar: tayyorlaymiz va joylaymiz",
+      "services.s2.i3": "Obunachilarni kiruvchi mijozlarga aylantiradigan o'sish",
+      "services.s3.h": "Sotadigan marketing",
+      "services.s3.p": "Layk emas, band qilingan qabullar uchun SMM, saytlar va lidogeneratsiya.",
+      "services.s3.i1": "Konversiyaga qaratilgan saytlar va lendinglar",
+      "services.s3.i2": "Haqiqiy kontent-konveyerli SMM",
+      "services.s3.i3": "Pullik va organik trafik, qabullar bilan o'lchanadi",
+      "demo.h": "Botimizga yozing. Ishlashini ko'ring.",
+      "demo.p": "Aida, jonli AI-administrator: xuddi sizniki qanday bo'lsa, shunday qurilgan. Telegramda yozing: lidni saralaydi, vaqt taklif qiladi va qabulni tasdiqlaydi. O'zbek, rus yoki ingliz tilida.",
+      "demo.cta": "Demo-botni ochish",
+      "flow.n1": "Xabar keladi", "flow.n1s": "Telegram yoki Instagram",
+      "flow.n2": "Aida soniyalarda javob beradi", "flow.n2s": "lidni saralaydi",
+      "flow.n3": "Qabul band qilindi", "flow.n3s": "to'g'ridan-to'g'ri kalendarga",
+      "flow.n4": "Raqamlarni ko'rasiz", "flow.n4s": "oddiy hisobotda",
+      "market.h": "Toshkent telefonda, chatda, hoziroq xarid qiladi.",
+      "market.p": "Mijozlaringiz har kuni Telegram va Instagramda. Bu yerdagi ko'p agentliklar hali ham soatbay SEO sotadi. Biz bozor yashaydigan joyda ishlaymiz.",
+      "market.s1": "Telegram foydalanuvchisi, mamlakatning qariyb 85%i. Haqiqiy vitrina.",
+      "market.s2": "Instagram foydalanuvchisi: shaxsiy brendlar shu yerda quriladi.",
+      "market.s3": "internetga telefondan kiradi. Mobile-first shart.",
+      "market.s4": "o'rtacha yosh. Yosh, raqamli auditoriya.",
+      "market.note": "Bu yerda deyarli hech kim AI-avtomatlashtirish bilan chiqmaydi. Bu bo'shliq bizning maydonimiz.",
+      "offer.h": "Ilk 3 ta asos-mijozimizni qabul qilamiz.",
+      "offer.p": "Biz yangimiz va buni yashirmaymiz. Erta ishonganingiz uchun to'liq e'tiborimiz, boshlang'ich narxlar va natijangizni o'z portfoliosidek ko'radigan jamoani olasiz. Chunki bu haqiqatan ham shunday.",
+      "offer.i1": "Boshlang'ich narx, o'sganimizda ham o'zgarmaydi",
+      "offer.i2": "Asoschilar bilan to'g'ridan-to'g'ri aloqa, menejersiz",
+      "offer.i3": "Natijalarni birga ochiq keys sifatida hujjatlashtiramiz",
+      "offer.seats": "Cheklangan · 3 o'rin", "offer.big": "Bepul tahlildan boshlaymiz",
+      "offer.promise": "Lidlar inboxingizda, aks holda o'sha hafta uchun to'lamaysiz.",
+      "offer.cta": "O'rinni band qilish", "offer.fine": "Bosimsiz, jargonsiz. Faqat aniq reja.",
+      "process.h": "Birinchi xabardan avtopilotgacha.",
+      "process.s1.h": "Bepul tahlil",
+      "process.s1.p": "Qisqa qo'ng'iroq: vaqt va lidlarni qayerda yo'qotayotganingizni aniqlaymiz. Biz bilan ishlamasangiz ham, nimani birinchi avtomatlashtirish ro'yxati bilan qolasiz.",
+      "process.s2.h": "Tizimni quramiz",
+      "process.s2.p": "Avtomatlashtirish, kontent yoki saytni to'liq tayyor holda loyihalaymiz va ishga tushiramiz. Siz ko'rasiz, biz sayqallaymiz, tez jonlanadi.",
+      "process.s3.h": "O'zi ishlaydi, siz o'sasiz",
+      "process.s3.p": "Yumushlar o'zi aylanadi, siz esa oddiy hisobot olasiz: qabullar, tejalgan soatlar, yuborilgan javoblar. Siz o'sasiz, biz sozlaymiz.",
+      "contact.h": "Qo'lda qilishni to'xtating.",
+      "contact.p": "Telegramda bitta xabar. Qayerda vaqt yo'qotayotganingiz va nimani birinchi avtomatlashtirishni aytamiz. Bepul.",
+      "contact.cta": "Telegramda yozish",
+      "footer.tag": "kamroq qo'l mehnati, ko'proq natija"
+    }
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* warm ink + clay drench. cream is never a page background. */
+    --ink:oklch(0.22 0.012 75);        /* ~#201D19 */
+    --ink-2:oklch(0.26 0.014 75);      /* ~#2A2520 */
+    --clay:#C2603F;
+    --clay-deep:#A44E30;
+    --clay-glow:#D8794F;
+    --bone:#F4F1EA;
+    --sand:#E9DCC9;
+    --muted:#B0A798;
+    --line:oklch(0.34 0.02 70);
+    --maxw:1180px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    /* z scale: canvas(0/1) < content(2) < nav(80) */
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html.cinema{scroll-behavior:auto}
+  body{
+    margin:0;background:var(--ink);color:var(--bone);
+    font-family:'Golos Text',system-ui,sans-serif;font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--clay);color:var(--bone)}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Unbounded';font-weight:600;letter-spacing:-0.015em;margin:0;text-wrap:balance}
+  p{text-wrap:pretty}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  .skip{position:fixed;top:-48px;left:16px;z-index:100;background:var(--bone);color:var(--ink);
+        padding:10px 18px;border-radius:10px;font-weight:600;transition:top .2s}
+  .skip:focus{top:12px}
+  :focus-visible{outline:2px solid var(--clay-glow);outline-offset:3px;border-radius:4px}
+
+  /* ---------- background layers ---------- */
+  .poster{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(120% 90% at 84% 4%, rgba(194,96,63,.30), transparent 56%),
+      radial-gradient(110% 80% at 6% 96%, rgba(42,37,32,.9), transparent 62%),
+      var(--ink)}
+  .poster::after{content:"";position:absolute;inset:0;opacity:.05;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  #fp-canvas{position:fixed;inset:0;z-index:1;display:block;pointer-events:none}
+  main{position:relative;z-index:2}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Golos Text';font-weight:600;
+       font-size:15.5px;padding:14px 24px;border-radius:99px;border:1px solid transparent;cursor:pointer;
+       transition:transform .4s var(--ease),background .25s,border-color .25s;will-change:transform}
+  .btn svg{flex:none;transition:transform .4s var(--ease)}
+  .btn:hover svg{transform:translateX(3px)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--clay-deep);color:var(--bone)}
+  .btn-primary:hover{background:#8F4227}
+  .btn-ghost{border-color:rgba(244,241,234,.3);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--bone)}
+  /* on clay drench: primary flips to bone */
+  .drench .btn-primary{background:var(--bone);color:var(--ink)}
+  .drench .btn-primary:hover{background:#fff}
+  .drench .btn-ghost{border-color:rgba(244,241,234,.45)}
+
+  /* ---------- nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:80;height:66px;display:flex;align-items:center;
+      border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+  nav.scrolled{background:oklch(0.22 0.012 75 / .94);border-bottom-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand .word{font-family:'Unbounded';font-weight:600;font-size:15px;letter-spacing:0;color:var(--bone)}
+  .brand .word b{color:var(--clay-glow);font-weight:600}
+  .navlinks{display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);font-size:14px;font-weight:500}
+  .navlinks a:not(.nav-cta){color:var(--muted);transition:color .25s}
+  .navlinks a:not(.nav-cta):hover{color:var(--bone)}
+  .nav-cta{font-weight:600;font-size:13.5px;padding:9px 18px;border-radius:99px;
+           background:var(--clay-deep);color:var(--bone);transition:transform .3s var(--ease),background .25s}
+  .nav-cta:hover{background:#8F4227;transform:translateY(-1px)}
+  .lang{display:flex;gap:2px;background:var(--ink-2);border:1px solid var(--line);border-radius:99px;padding:3px}
+  .lang button{font-family:'Golos Text';font-weight:600;font-size:11.5px;letter-spacing:.02em;color:var(--muted);
+       background:none;border:0;padding:5px 10px;border-radius:99px;cursor:pointer;transition:color .2s,background .2s}
+  .lang button:hover{color:var(--bone)}
+  .lang button.on{background:var(--clay-deep);color:var(--bone)}
+  @media(max-width:760px){.navlinks a:not(.nav-cta){display:none}}
+  @media(max-width:430px){
+    .brand .word{display:none}
+    .lang button{padding:5px 8px}
+    .nav-cta{font-size:12.5px;padding:8px 13px}
+  }
+
+  /* ---------- story (hero + 3 beats) ----------
+     Default: a normal readable document. .cinema turns it into a
+     pinned scene; GSAP owns beat visibility there. */
+  #story{position:relative}
+  .story-stage{position:relative}
+  .beat{position:relative;padding:clamp(90px,14vh,150px) 0;display:flex;align-items:center}
+  .beat .wrap{width:100%}
+  .binner{max-width:840px}
+  .beat h1{font-size:clamp(2.1rem,6.4vw,5rem);line-height:1.06;letter-spacing:-0.02em}
+  .beat h1 .k,.beat h2 .k{color:var(--clay-glow)}
+  .beat h2{font-size:clamp(1.55rem,4vw,3.1rem);line-height:1.12}
+  .beat .sub{margin:clamp(20px,3vw,28px) 0 0;font-size:clamp(17px,1.8vw,20px);color:var(--muted);max-width:56ch}
+  .beat .bp{margin:clamp(18px,2.6vw,26px) 0 0;font-size:clamp(17px,2vw,21px);line-height:1.65;
+            color:var(--bone);max-width:44ch}
+  .beat .cta{margin-top:clamp(28px,4vw,38px);display:flex;gap:12px;flex-wrap:wrap}
+  .cinema #story{height:520vh}
+  .cinema .story-stage{position:sticky;top:0;height:100svh;overflow:hidden}
+  .cinema .beat{position:absolute;inset:0;padding:0;height:100%}
+  .cinema .beat[data-beat="1"] .binner,
+  .cinema .beat[data-beat="2"] .binner,
+  .cinema .beat[data-beat="3"] .binner{margin:0 auto;text-align:center}
+  .cinema .beat[data-beat="1"] .bp,
+  .cinema .beat[data-beat="2"] .bp,
+  .cinema .beat[data-beat="3"] .bp{margin-left:auto;margin-right:auto}
+  .cinema .beat[data-beat="3"] .cta{justify-content:center}
+  .scrollcue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
+        font-size:12px;font-weight:500;letter-spacing:.08em;color:rgba(244,241,234,.5);
+        display:none;flex-direction:column;align-items:center;gap:8px}
+  .cinema .scrollcue{display:flex}
+  .scrollcue .line{width:1px;height:34px;background:linear-gradient(var(--sand),transparent);animation:cue 2.2s var(--ease) infinite}
+  @keyframes cue{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{opacity:1}100%{transform:scaleY(1);transform-origin:top;opacity:0}}
+
+  /* progressive word reveal: spans get colored by GSAP in cinema mode */
+  .bp .w{color:inherit}
+
+  /* ---------- shared section shell ---------- */
+  section{position:relative}
+  .sec{padding:clamp(84px,12vw,170px) 0}
+  .sec h2{font-size:clamp(1.7rem,4.4vw,3.4rem);line-height:1.1;max-width:22ch}
+  .lead{margin:22px 0 0;max-width:58ch;color:var(--muted);font-size:clamp(16.5px,1.6vw,19px)}
+
+  /* ---------- services: editorial rows, not cards ---------- */
+  #services .rows{margin-top:clamp(44px,6vw,72px)}
+  .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,5vw,72px);
+       padding:clamp(34px,5vw,56px) 0;border-top:1px solid var(--line);align-items:start}
+  .row:last-child{border-bottom:1px solid var(--line)}
+  .row.flip{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+  .row.flip .row-head{order:2}
+  .row.flip .row-body{order:1}
+  .row h3{font-size:clamp(1.25rem,2.6vw,1.9rem);line-height:1.18;display:flex;align-items:center;gap:16px}
+  .mot{width:44px;height:44px;flex:none}
+  .mflow{stroke-dasharray:4 7;animation:mdash 1.3s linear infinite}
+  @keyframes mdash{to{stroke-dashoffset:-11}}
+  .mwave{animation:mpulse 2.4s ease-out infinite}
+  @keyframes mpulse{0%,100%{opacity:.25}30%{opacity:1}}
+  .mbar{transform-box:fill-box;transform-origin:50% 100%;animation:mbarp 2.6s ease-in-out infinite}
+  @keyframes mbarp{0%,100%{transform:scaleY(.8)}50%{transform:scaleY(1)}}
+  .row-body p{margin:0;color:var(--muted);font-size:16.5px;max-width:52ch}
+  .row-body ul{margin:20px 0 0;padding:0;list-style:none}
+  .row-body li{position:relative;padding-left:24px;margin-top:10px;font-size:15.5px;color:var(--bone)}
+  .row-body li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:99px;background:var(--clay)}
+  @media(max-width:720px){.row,.row.flip{grid-template-columns:1fr;gap:14px}
+    .row.flip .row-head{order:1}.row.flip .row-body{order:2}}
+
+  /* ---------- demo: chat mock ---------- */
+  #demo .demo-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,80px);align-items:center}
+  @media(max-width:860px){#demo .demo-grid{grid-template-columns:1fr}}
+  .chat{background:var(--ink-2);border:1px solid var(--line);border-radius:24px;padding:26px 22px 22px;max-width:430px;justify-self:center;width:100%}
+  .chat .chat-top{display:flex;align-items:center;gap:10px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .chat .dot{width:9px;height:9px;border-radius:99px;background:#7FB069;box-shadow:0 0 10px #7FB069}
+  .chat .chat-top span{font-size:13.5px;font-weight:500;color:var(--muted)}
+  .msg{max-width:82%;padding:11px 15px;border-radius:16px;font-size:14.5px;line-height:1.5;margin-top:10px}
+  .msg.in{background:oklch(0.32 0.016 75);color:var(--bone);border-bottom-left-radius:5px}
+  .msg.out{background:var(--clay-deep);color:var(--bone);margin-left:auto;border-bottom-right-radius:5px}
+  .chat .cta{margin-top:22px}
+  .chat .cta .btn{width:100%;justify-content:center}
+
+  /* ---------- workflow diagram: DM -> Aida -> booking -> report ---------- */
+  .flowline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:clamp(10px,1.6vw,20px);
+       align-items:start;margin-top:clamp(56px,8vw,100px)}
+  .fnode{text-align:center;padding:0 4px}
+  .fic{width:48px;height:48px;margin:0 auto;border-radius:14px;display:flex;align-items:center;justify-content:center;
+       border:1px solid var(--line);background:var(--ink-2);color:var(--clay-glow);
+       animation:npulse 3.4s ease-in-out infinite}
+  .fnode:nth-of-type(3) .fic{animation-delay:.5s}
+  .fnode:nth-of-type(5) .fic{animation-delay:1s}
+  .fnode:nth-of-type(7) .fic{animation-delay:1.5s}
+  @keyframes npulse{0%,100%{box-shadow:0 0 0 rgba(216,121,79,0)}45%{box-shadow:0 0 24px rgba(216,121,79,.35)}}
+  .ft{margin-top:14px;font-weight:600;font-size:15px;color:var(--bone);line-height:1.35;text-wrap:balance}
+  .fs{margin-top:4px;font-size:13.5px;color:var(--muted)}
+  .fjoin{height:2px;width:clamp(18px,3.4vw,54px);margin-top:23px;border-radius:2px;opacity:.75;
+       background:repeating-linear-gradient(90deg,var(--clay-glow) 0 6px,transparent 6px 14px);
+       background-size:14px 2px;animation:flowdash 1.1s linear infinite}
+  @keyframes flowdash{to{background-position:14px 0}}
+  @media(max-width:720px){
+    .flowline{grid-template-columns:1fr;gap:10px}
+    .fjoin{width:2px;height:26px;margin:4px auto;
+       background:repeating-linear-gradient(180deg,var(--clay-glow) 0 6px,transparent 6px 14px);
+       background-size:2px 14px;animation:flowdashv 1.1s linear infinite}
+    @keyframes flowdashv{to{background-position:0 14px}}
+  }
+
+  /* ---------- market stats: numbers + rules, no boxes ---------- */
+  #market .stats{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  @media(max-width:860px){#market .stats{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){#market .stats{grid-template-columns:1fr}}
+  .stat{padding:26px clamp(16px,2vw,28px) 30px;border-top:1px solid var(--line)}
+  .stat+.stat{border-left:1px solid var(--line)}
+  @media(max-width:860px){.stat:nth-child(3){border-left:none}}
+  @media(max-width:460px){.stat+.stat{border-left:none}}
+  .stat .num{font-family:'Unbounded';font-weight:700;font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-0.01em;color:var(--clay-glow);line-height:1}
+  .stat .cap{margin-top:12px;font-size:14.5px;color:var(--muted);line-height:1.5;max-width:24ch}
+  .market-note{margin:clamp(30px,4vw,44px) 0 0;font-size:clamp(16px,1.6vw,18px);color:var(--bone);max-width:56ch}
+
+  /* ---------- drench chapters (offer + contact) ---------- */
+  .drench{background:
+      radial-gradient(100% 80% at 88% 6%, rgba(216,121,79,.32), transparent 54%),
+      var(--clay-deep);
+    color:var(--bone)}
+  .drench .lead{color:rgba(244,241,234,.94)}
+  #offer .offer-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,5vw,72px);align-items:center;margin-top:clamp(30px,4vw,48px)}
+  @media(max-width:860px){#offer .offer-grid{grid-template-columns:1fr}}
+  .offer-list{margin:26px 0 0;padding:0;list-style:none}
+  .offer-list li{position:relative;padding-left:32px;margin-top:15px;font-size:16.5px}
+  .offer-list li svg{position:absolute;left:0;top:3px}
+  .offer-card{border-radius:24px;padding:clamp(28px,3.4vw,38px);background:var(--ink);color:var(--bone)}
+  .offer-card .seats{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--sand)}
+  .offer-card .big{font-family:'Unbounded';font-weight:600;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-0.01em;margin:16px 0 6px;line-height:1.15}
+  .offer-card .promise{font-size:16.5px;color:var(--sand);margin:4px 0 26px;max-width:34ch}
+  .offer-card .btn{width:100%;justify-content:center;background:var(--clay-deep);color:var(--bone)}
+  .offer-card .btn:hover{background:#8F4227}
+  .offer-card .fine{margin:14px 0 0;font-size:13.5px;color:var(--muted);text-align:center}
+
+  /* ---------- process: the one legit numbered sequence ---------- */
+  #process .steps{margin-top:clamp(40px,5vw,64px)}
+  .step{display:grid;grid-template-columns:110px minmax(0,1fr);gap:clamp(16px,4vw,48px);padding:clamp(26px,3.6vw,38px) 0;border-top:1px solid var(--line);align-items:start}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .k{font-family:'Unbounded';font-weight:700;font-size:15px;color:var(--clay-glow);padding-top:8px}
+  .step h3{font-size:clamp(1.25rem,2.6vw,1.8rem)}
+  .step p{margin:10px 0 0;color:var(--muted);max-width:54ch}
+  @media(max-width:620px){.step{grid-template-columns:1fr;gap:6px}}
+
+  /* ---------- final cta ---------- */
+  #contact{text-align:center}
+  #contact h2{max-width:14ch;margin:0 auto;font-size:clamp(2rem,6vw,4.4rem)}
+  #contact .lead{margin-left:auto;margin-right:auto}
+  .contact-cta{margin-top:38px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .contact-meta{margin-top:30px;font-size:14px;color:rgba(244,241,234,.75)}
+  .contact-meta a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(244,241,234,.4)}
+  .contact-meta a:hover{text-decoration-color:var(--bone)}
+
+  /* ---------- footer ---------- */
+  footer{position:relative;z-index:2;background:var(--ink);padding:clamp(44px,7vw,72px) 0;border-top:1px solid var(--line)}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer .word{font-family:'Unbounded';font-weight:600;font-size:16px}
+  footer .tag{font-size:14px;color:var(--sand);margin-top:4px}
+  footer .fine{font-size:13px;color:var(--muted)}
+
+  /* ---------- reduced motion ---------- */
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#services" data-i18n="skip">Skip to content</a>
+<div class="poster" aria-hidden="true"></div>
+<canvas id="fp-canvas" aria-hidden="true"></canvas>
+
+<!-- ===================== NAV ===================== -->
+<nav id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="FlowPilot AI home">
+      <svg width="30" height="30" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="94" height="94" rx="26" fill="#C2603F"/>
+        <path d="M24 72 Q44 70 56 50 T80 24" stroke="#F4F1EA" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M80 24 L65 26 M80 24 L78 40" stroke="#F4F1EA" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="24" cy="72" r="5.5" fill="#F4F1EA"/>
+      </svg>
+      <span class="word">Flow<b>Pilot</b></span>
+    </a>
+    <div class="navlinks">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#demo" data-i18n="nav.demo">Live demo</a>
+      <a href="#offer" data-i18n="nav.offer">Founding offer</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ru">RU</button>
+        <button type="button" data-lang="uz">UZ</button>
+      </div>
+      <a class="nav-cta" data-tg href="#" data-i18n="nav.cta">Talk on Telegram</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ===================== STORY ===================== -->
+<div id="story">
+  <div class="story-stage">
+
+    <header class="beat" data-beat="0" id="b0">
+      <div class="wrap"><div class="binner">
+        <h1 data-i18n="hero.h1">Your growth,<br>on <span class="k">autopilot</span>.</h1>
+        <p class="sub" data-i18n="hero.sub">We're FlowPilot, an AI automation agency in Tashkent. We wire the newest AI into your marketing, sales, and DMs, so the busywork runs itself.</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-tg href="#"><span data-i18n="hero.cta1">Book a free teardown</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-ghost" data-demo href="#" data-i18n="hero.cta2">Try the live bot</a>
+        </div>
+      </div></div>
+    </header>
+
+    <div class="beat" data-beat="1" id="b1">
+      <div class="wrap"><div class="binner">
+        <h2 data-i18n="b1.h">Every lead you answer by hand is one you'll eventually <span class="k">miss</span>.</h2>
+        <p class="bp" data-i18n="b1.p">DMs pile up. Follow-ups slip. Your best people copy-paste the same reply forty times a day. It isn't a people problem. It's plumbing.</p>
+      </div></div>
+    </div>
+
+    <div class="beat" data-beat="2" id="b2">
+      <div class="wrap"><div class="binner">
+        <h2 data-i18n="b2.h">So we re-route the busywork through <span class="k">AI</span>.</h2>
+        <p class="bp" data-i18n="b2.p">Lead bots that answer in seconds, in Uzbek or Russian. Follow-ups that send themselves. Bookings that land in your calendar while your phone stays in your pocket.</p>
+      </div></div>
+    </div>
+
+    <div class="beat" data-beat="3" id="b3">
+      <div class="wrap"><div class="binner">
+        <h2 data-i18n="b3.h">Then it runs. And keeps <span class="k">running</span>.</h2>
+        <p class="bp" data-i18n="b3.p">Leads qualified, appointments booked, reports delivered. All day, all night. You check the numbers, not the inbox.</p>
+        <div class="cta">
+          <a class="btn btn-primary" data-tg href="#"><span data-i18n="b3.cta1">Book a free teardown</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn-ghost" href="#services" data-i18n="b3.cta2">See what we run</a>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="scrollcue" aria-hidden="true"><span data-i18n="hero.scroll">Scroll</span><span class="line"></span></div>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="sec">
+  <div class="wrap">
+    <h2 data-enter data-i18n="services.h">What we put on autopilot.</h2>
+    <p class="lead" id="services-lead" data-i18n="services.lead">Three services, one goal: booked appointments without the busywork. Built Telegram-first and Instagram-ready, because that's where Tashkent actually buys.</p>
+
+    <div class="rows">
+      <div class="row" data-enter>
+        <div class="row-head"><h3>
+          <svg class="mot" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="9" cy="24" r="4.5" stroke="var(--clay)" stroke-width="2"/>
+            <circle cx="39" cy="12" r="4.5" stroke="var(--clay)" stroke-width="2"/>
+            <circle cx="39" cy="36" r="4.5" stroke="var(--clay)" stroke-width="2"/>
+            <path class="mflow" d="M13.5 24 C 24 24, 26 12, 34.5 12" stroke="var(--clay-glow)" stroke-width="2"/>
+            <path class="mflow" d="M13.5 24 C 24 24, 26 36, 34.5 36" stroke="var(--clay-glow)" stroke-width="2" style="animation-delay:.45s"/>
+          </svg>
+          <span data-i18n="services.s1.h">AI automations</span></h3></div>
+        <div class="row-body">
+          <p data-i18n="services.s1.p">Custom AI agents and workflows that handle the repetitive work, so your team stops copy-pasting and starts closing.</p>
+          <ul>
+            <li data-i18n="services.s1.i1">DM and lead bots for Telegram and Instagram, in your voice</li>
+            <li data-i18n="services.s1.i2">Auto-replies, booking, and follow-up that never sleep</li>
+            <li data-i18n="services.s1.i3">Internal automations: quotes, reports, onboarding</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row flip" data-enter>
+        <div class="row-head"><h3>
+          <svg class="mot" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="18" cy="24" r="7" stroke="var(--clay)" stroke-width="2"/>
+            <circle cx="18" cy="21" r="2.4" stroke="var(--clay)" stroke-width="1.6"/>
+            <path d="M13.5 29.5c1-2.1 2.6-3.2 4.5-3.2s3.5 1.1 4.5 3.2" stroke="var(--clay)" stroke-width="1.6" stroke-linecap="round"/>
+            <path class="mwave" d="M30 15a13 13 0 0 1 0 18" stroke="var(--clay-glow)" stroke-width="2" stroke-linecap="round"/>
+            <path class="mwave" d="M35 10a20 20 0 0 1 0 28" stroke="var(--clay-glow)" stroke-width="2" stroke-linecap="round" style="animation-delay:.35s"/>
+          </svg>
+          <span data-i18n="services.s2.h">Personal branding</span></h3></div>
+        <div class="row-body">
+          <p data-i18n="services.s2.p">For founders and executives who should be known. We build authority content on Instagram and run it for you.</p>
+          <ul>
+            <li data-i18n="services.s2.i1">Positioning and content strategy for your face, not a logo</li>
+            <li data-i18n="services.s2.i2">Reels, carousels, and hooks, produced and posted</li>
+            <li data-i18n="services.s2.i3">Growth that turns followers into inbound clients</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row" data-enter>
+        <div class="row-head"><h3>
+          <svg class="mot" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M8 41h32" stroke="var(--clay)" stroke-width="2" stroke-linecap="round"/>
+            <rect class="mbar" x="11" y="29" width="6" height="9" rx="1.5" fill="var(--clay-deep)"/>
+            <rect class="mbar" x="21" y="23" width="6" height="15" rx="1.5" fill="var(--clay)" style="animation-delay:.3s"/>
+            <rect class="mbar" x="31" y="15" width="6" height="23" rx="1.5" fill="var(--clay-glow)" style="animation-delay:.6s"/>
+          </svg>
+          <span data-i18n="services.s3.h">Marketing that converts</span></h3></div>
+        <div class="row-body">
+          <p data-i18n="services.s3.p">SMM, websites, and lead generation built to bring booked appointments, not vanity likes.</p>
+          <ul>
+            <li data-i18n="services.s3.i1">Conversion-first websites and landing pages</li>
+            <li data-i18n="services.s3.i2">Social media management with a real content engine</li>
+            <li data-i18n="services.s3.i3">Paid and organic lead gen, measured by leads booked</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIVE DEMO ===================== -->
+<section id="demo" class="sec">
+  <div class="wrap">
+    <div class="demo-grid">
+      <div>
+        <h2 data-enter data-i18n="demo.h">Text our bot. Watch it work.</h2>
+        <p class="lead" data-enter data-i18n="demo.p">Aida is a live AI front-desk assistant, built the way we'd build yours. Message it on Telegram and watch it qualify a lead, offer booking slots, and confirm an appointment. In Uzbek, Russian, or English.</p>
+        <div class="cta" style="margin-top:32px" data-enter>
+          <a class="btn btn-primary" data-demo href="#" target="_blank" rel="noopener"><span data-i18n="demo.cta">Try the live demo bot</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+      <div class="chat" data-enter aria-label="Example conversation with the demo bot">
+        <div class="chat-top"><span class="dot" aria-hidden="true"></span><span>Aida · live on Telegram</span></div>
+        <div class="msg in">Assalomu alaykum! Ertaga bo'sh vaqt bormi?</div>
+        <div class="msg out">Va alaykum assalom! Ertaga 11:00, 14:30 yoki 17:00 bo'sh. Qaysi biri qulay?</div>
+        <div class="msg in">14:30</div>
+        <div class="msg out">Bo'ldi ✓ Ertaga 14:30 ga yozib qo'ydim. Ismingizni qoldirasizmi?</div>
+      </div>
+    </div>
+
+    <div class="flowline" data-enter>
+      <div class="fnode">
+        <div class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h9A3.5 3.5 0 0 1 20 6.5v6a3.5 3.5 0 0 1-3.5 3.5H10l-4.2 3.6c-.7.6-1.8.1-1.8-.9V6.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 8.5h7M8.5 12h4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="ft" data-i18n="flow.n1">A DM comes in</div>
+        <div class="fs" data-i18n="flow.n1s">Telegram or Instagram</div>
+      </div>
+      <div class="fjoin" aria-hidden="true"></div>
+      <div class="fnode">
+        <div class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5l1.9 5.4a2 2 0 0 0 1.2 1.2l5.4 1.9-5.4 1.9a2 2 0 0 0-1.2 1.2L12 19.5l-1.9-5.4a2 2 0 0 0-1.2-1.2L3.5 11l5.4-1.9a2 2 0 0 0 1.2-1.2L12 2.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="19.5" cy="19" r="2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <div class="ft" data-i18n="flow.n2">Aida replies in seconds</div>
+        <div class="fs" data-i18n="flow.n2s">qualifies the lead</div>
+      </div>
+      <div class="fjoin" aria-hidden="true"></div>
+      <div class="fnode">
+        <div class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 2.8v4M16 2.8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 14.8l2.4 2.4 4.6-4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="ft" data-i18n="flow.n3">Slot booked</div>
+        <div class="fs" data-i18n="flow.n3s">straight into the calendar</div>
+      </div>
+      <div class="fjoin" aria-hidden="true"></div>
+      <div class="fnode">
+        <div class="fic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M21 20H3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="ft" data-i18n="flow.n4">You see the numbers</div>
+        <div class="fs" data-i18n="flow.n4s">a simple report</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARKET ===================== -->
+<section id="market" class="sec">
+  <div class="wrap">
+    <h2 data-enter data-i18n="market.h">Tashkent buys on a phone, in a chat, right now.</h2>
+    <p class="lead" data-enter data-i18n="market.p">Your customers are already on Telegram and Instagram every day. Most agencies here still sell SEO by the hour. We meet the market where it lives.</p>
+    <div class="stats" data-enter>
+      <div class="stat"><div class="num"><span data-count="27" data-suffix="M">27M</span></div><div class="cap" data-i18n="market.s1">Telegram users, roughly 85% of the country. The real storefront.</div></div>
+      <div class="stat"><div class="num"><span data-count="11" data-suffix="M">11M</span></div><div class="cap" data-i18n="market.s2">Instagram users, where personal brands get built.</div></div>
+      <div class="stat"><div class="num"><span data-count="89" data-suffix="%">89%</span></div><div class="cap" data-i18n="market.s3">browse the web on a phone. Mobile-first is non-negotiable.</div></div>
+      <div class="stat"><div class="num"><span data-count="27" data-suffix="">27</span></div><div class="cap" data-i18n="market.s4">median age. A young, digitally native audience.</div></div>
+    </div>
+    <p class="market-note" data-enter data-i18n="market.note">Almost no one here leads with AI automation and agentic workflows. That gap is our home turf.</p>
+  </div>
+</section>
+
+<!-- ===================== FOUNDING OFFER (drench) ===================== -->
+<section id="offer" class="sec drench">
+  <div class="wrap">
+    <div class="offer-grid">
+      <div>
+        <h2 data-enter data-i18n="offer.h">We're taking on our first 3 founding clients.</h2>
+        <p class="lead" data-enter data-i18n="offer.p">We're new and we're not hiding it. In exchange for being early you get our full attention, founding pricing, and a team that treats your results like our portfolio. Because they are.</p>
+        <ul class="offer-list" data-enter>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke="#F4F1EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="offer.i1">Founding pricing, locked in as we grow</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke="#F4F1EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="offer.i2">A direct line to the founders, no account-manager wall</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4 4 10-10" stroke="#F4F1EA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="offer.i3">Results documented together as a public case study</span></li>
+        </ul>
+      </div>
+      <div class="offer-card" data-enter>
+        <div class="seats" data-i18n="offer.seats">Limited · 3 seats</div>
+        <div class="big" data-i18n="offer.big">Free teardown to start</div>
+        <p class="promise" data-i18n="offer.promise">Leads in your inbox, or you don't pay for that week.</p>
+        <a class="btn" data-tg href="#"><span data-i18n="offer.cta">Claim a founding seat</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="fine" data-i18n="offer.fine">No pressure, no jargon. Just a clear plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section id="process" class="sec">
+  <div class="wrap">
+    <h2 data-enter data-i18n="process.h">From first chat to running on autopilot.</h2>
+    <div class="steps">
+      <div class="step" data-enter><div class="k">01</div><div><h3 data-i18n="process.s1.h">Free teardown</h3><p data-i18n="process.s1.p">A short call where we map where you lose time and leads today. You leave with a clear list of what to automate first, whether you hire us or not.</p></div></div>
+      <div class="step" data-enter><div class="k">02</div><div><h3 data-i18n="process.s2.h">We build the system</h3><p data-i18n="process.s2.p">We design and ship the automations, content engine, or site, done-for-you. You review, we refine, it goes live fast.</p></div></div>
+      <div class="step" data-enter><div class="k">03</div><div><h3 data-i18n="process.s3.h">It runs, you grow</h3><p data-i18n="process.s3.p">The busywork runs itself and you get a simple report: leads booked, hours saved, replies sent. We tune it as you scale.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA (drench) ===================== -->
+<section id="contact" class="sec drench">
+  <div class="wrap">
+    <h2 data-enter data-i18n="contact.h">Stop doing it by hand.</h2>
+    <p class="lead" data-enter data-i18n="contact.p">Send one message on Telegram. We'll reply with where you're losing time and what to automate first. Free.</p>
+    <div class="contact-cta" data-enter>
+      <a class="btn btn-primary" data-tg href="#" style="font-size:16px;padding:15px 28px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3l-3.3 15.6c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1 .5l.36-5.1L17.9 6.3c.4-.36-.09-.56-.62-.2L6.9 12.5l-4.95-1.55c-1.08-.34-1.1-1.08.23-1.6L20.5 2.7c.9-.33 1.68.2 1.4 1.6z"/></svg>
+        <span data-i18n="contact.cta">Message us on Telegram</span></a>
+    </div>
+    <div class="contact-meta" data-enter><span id="meta-links"></span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="38" height="38" viewBox="0 0 100 100" fill="none" aria-hidden="true"><rect x="3" y="3" width="94" height="94" rx="26" fill="#C2603F"/><path d="M24 72 Q44 70 56 50 T80 24" stroke="#F4F1EA" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M80 24 L65 26 M80 24 L78 40" stroke="#F4F1EA" stroke-width="8" stroke-linecap="round"/><circle cx="24" cy="72" r="5.5" fill="#F4F1EA"/></svg>
+      <div><div class="word">Flow<span style="color:var(--clay-glow)">Pilot</span> AI</div><div class="tag" data-i18n="footer.tag">less manual, more results</div></div>
+    </a>
+    <div class="fine">© <span id="yr"></span> FlowPilot AI · Tashkent</div>
+  </div>
+</footer>
+
+<!-- ===================== BASE SCRIPT (no deps; runs in every mode) ===================== -->
+<script>
+(function(){
+  "use strict";
+  var C = window.FP_CONFIG || {};
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* wire Telegram + demo + meta links */
+  document.querySelectorAll("[data-tg]").forEach(function(a){ a.href = C.telegram || "#"; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll("[data-demo]").forEach(function(a){ a.href = C.demoBot || "#"; a.target = "_blank"; a.rel = "noopener"; });
+  (function(){
+    var bits = [];
+    if (C.telegram)  bits.push('<a href="'+C.telegram+'" target="_blank" rel="noopener">Telegram</a>');
+    if (C.instagram) bits.push('<a href="'+C.instagram+'" target="_blank" rel="noopener">Instagram</a>');
+    if (C.whatsapp)  bits.push('<a href="'+C.whatsapp+'" target="_blank" rel="noopener">WhatsApp</a>');
+    if (C.email)     bits.push('<a href="mailto:'+C.email+'">'+C.email+'</a>');
+    var el = document.getElementById("meta-links");
+    if (el) el.innerHTML = bits.join(' &nbsp;·&nbsp; ');
+  })();
+  var yr = document.getElementById("yr"); if (yr) yr.textContent = new Date().getFullYear();
+
+  /* i18n: EN is the markup; RU/UZ swap in from FP_COPY. Reload-based so the
+     scroll choreography always splits the final text (no re-split needed). */
+  var LANG = "en";
+  try { LANG = localStorage.getItem("fp-lang") || "en"; } catch(e){}
+  window.FP_setLang = function(lang){
+    try { localStorage.setItem("fp-lang", lang); } catch(e){}
+    location.reload();
+  };
+  (function applyLang(){
+    var dict = (window.FP_COPY || {})[LANG];
+    if (dict){
+      document.documentElement.lang = LANG;
+      if (dict["title"]) document.title = dict["title"];
+      var md = document.querySelector('meta[name="description"]');
+      if (md && dict["meta.desc"]) md.setAttribute("content", dict["meta.desc"]);
+      document.querySelectorAll("[data-i18n]").forEach(function(el){
+        var k = el.getAttribute("data-i18n");
+        if (dict[k]) el.innerHTML = dict[k];  /* dict values are our own strings */
+      });
+    }
+    document.querySelectorAll(".lang button").forEach(function(b){
+      var on = b.getAttribute("data-lang") === LANG;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.addEventListener("click", function(){
+        if (b.getAttribute("data-lang") !== LANG) window.FP_setLang(b.getAttribute("data-lang"));
+      });
+    });
+  })();
+
+  /* nav scroll state */
+  var nav = document.getElementById("nav");
+  function onScroll(){ if (window.scrollY > 40) nav.classList.add("scrolled"); else nav.classList.remove("scrolled"); }
+  onScroll(); window.addEventListener("scroll", onScroll, {passive:true});
+
+  /* count-up stats (IntersectionObserver; instant when reduced motion) */
+  var counted = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      counted.unobserve(e.target);
+      var el = e.target, target = parseFloat(el.getAttribute("data-count")), suf = el.getAttribute("data-suffix")||"";
+      if (reduce){ el.textContent = target + suf; return; }
+      var t0 = null, dur = 1300;
+      function tick(ts){
+        if (!t0) t0 = ts; var p = Math.min((ts-t0)/dur,1);
+        var eased = 1 - Math.pow(1-p,3);
+        el.textContent = Math.round(target*eased) + suf;
+        if (p<1) requestAnimationFrame(tick);
+      }
+      el.textContent = "0"+suf;
+      requestAnimationFrame(tick);
+    });
+  }, {threshold:0.6});
+  document.querySelectorAll("[data-count]").forEach(function(el){ counted.observe(el); });
+})();
+</script>
+
+<!-- ===================== CINEMA (GSAP + Lenis + Three) ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from "three";
+
+const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+const canvas = document.getElementById("fp-canvas");
+
+/* Reduced motion, or a missing CDN dep: stay a plain readable document. */
+if (reduce || !window.gsap || !window.ScrollTrigger) {
+  if (canvas) canvas.style.display = "none";
+} else {
+  document.documentElement.classList.add("cinema");
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------------- Lenis smooth scroll ---------------- */
+  let lenis = null;
+  if (window.Lenis) {
+    lenis = new Lenis({ lerp: 0.1 });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  /* route anchor links through Lenis */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      if (id === "#top") { e.preventDefault(); if (lenis) lenis.scrollTo(0); else scrollTo({top:0,behavior:"smooth"}); return; }
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      if (lenis) lenis.scrollTo(target, { offset: -20 });
+      else target.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  /* ---------------- scene state driven by the story timeline ---------------- */
+  const U = { turb: 1, m1: 0, m2: 0, camZ: 14, camX: 0, camY: 0, fade: 1 };
+  const mouse = { x: 0, y: 0 }, cam = { x: 0, y: 0 };
+
+  /* ---------------- Three.js: one Points draw call, three states ---------------- */
+  const isMobile = matchMedia("(max-width: 768px)").matches;
+  let three = null;
+  try {
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, isMobile ? 1.5 : 1.8));
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 100);
+    camera.position.z = 14;
+
+    const COUNT = isMobile ? 4500 : 12000;
+    const pos = new Float32Array(COUNT * 3);       // chaos base
+    const seeds = new Float32Array(COUNT);
+    const sizes = new Float32Array(COUNT);
+    const shade = new Float32Array(COUNT);
+    const orbX = new Float32Array(COUNT * 3);      // ellipse basis X * radiusA
+    const orbY = new Float32Array(COUNT * 3);      // ellipse basis Y * radiusB
+    const orbPS = new Float32Array(COUNT * 2);     // phase, angular speed
+    const strm = new Float32Array(COUNT * 2);      // lemniscate param u0, tube seed
+    const strOff = new Float32Array(COUNT * 3);    // random unit offset dir
+
+    /* orbit rings: ellipses mostly facing the camera, varied tilts */
+    const RINGS = 6, ringBasis = [];
+    for (let r = 0; r < RINGS; r++) {
+      const n = new THREE.Vector3(Math.sin(r * 2.4) * 0.5, Math.cos(r * 1.7) * 0.45, 1).normalize();
+      const u = new THREE.Vector3(0, 1, 0).cross(n).normalize();
+      const v = n.clone().cross(u).normalize();
+      ringBasis.push({ u, v, a: 3.4 + r * 1.0, b: (3.4 + r * 1.0) * 0.8, dir: r % 2 ? 1 : -1 });
+    }
+
+    for (let i = 0; i < COUNT; i++) {
+      /* chaos cloud (v1 distribution) */
+      const rr = Math.pow(Math.random(), 0.5) * 11;
+      const th = Math.random() * Math.PI * 2;
+      const ph = Math.acos(2 * Math.random() - 1);
+      pos[i*3]   = rr * Math.sin(ph) * Math.cos(th) * 1.5;
+      pos[i*3+1] = rr * Math.cos(ph) * 0.9;
+      pos[i*3+2] = rr * Math.sin(ph) * Math.sin(th) * 0.7;
+      seeds[i] = Math.random() * 100;
+      sizes[i] = 0.5 + Math.random() * 1.8;
+      shade[i] = Math.random();
+
+      /* orbit assignment */
+      const R = ringBasis[i % RINGS];
+      const jit = 0.95 + Math.random() * 0.1;
+      orbX[i*3]   = R.u.x * R.a * jit; orbX[i*3+1] = R.u.y * R.a * jit; orbX[i*3+2] = R.u.z * R.a * jit;
+      orbY[i*3]   = R.v.x * R.b * jit; orbY[i*3+1] = R.v.y * R.b * jit; orbY[i*3+2] = R.v.z * R.b * jit;
+      orbPS[i*2]  = Math.random() * Math.PI * 2;
+      orbPS[i*2+1]= R.dir * (0.16 + Math.random() * 0.1) * (4.5 / R.a);
+
+      /* infinity stream */
+      strm[i*2]   = Math.random() * Math.PI * 2;
+      strm[i*2+1] = Math.random();
+      const ov = new THREE.Vector3(Math.random()*2-1, Math.random()*2-1, Math.random()*2-1).normalize();
+      strOff[i*3] = ov.x; strOff[i*3+1] = ov.y; strOff[i*3+2] = ov.z;
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute("aSeed", new THREE.BufferAttribute(seeds, 1));
+    geo.setAttribute("aSize", new THREE.BufferAttribute(sizes, 1));
+    geo.setAttribute("aShade", new THREE.BufferAttribute(shade, 1));
+    geo.setAttribute("aOrbX", new THREE.BufferAttribute(orbX, 3));
+    geo.setAttribute("aOrbY", new THREE.BufferAttribute(orbY, 3));
+    geo.setAttribute("aOrbPS", new THREE.BufferAttribute(orbPS, 2));
+    geo.setAttribute("aStream", new THREE.BufferAttribute(strm, 2));
+    geo.setAttribute("aStrOff", new THREE.BufferAttribute(strOff, 3));
+
+    const vert = /* glsl */`
+      uniform float uTime, uPix, uTurb, uM1, uM2;
+      attribute float aSeed, aSize, aShade;
+      attribute vec3 aOrbX, aOrbY, aStrOff;
+      attribute vec2 aOrbPS, aStream;
+      varying float vShade, vAlpha;
+
+      /* simplex + curl noise (ported from FlowPilot v1) */
+      vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+      vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+      vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+      vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+      float snoise(vec3 v){const vec2 C=vec2(1.0/6.0,1.0/3.0);const vec4 D=vec4(0.0,0.5,1.0,2.0);
+        vec3 i=floor(v+dot(v,C.yyy));vec3 x0=v-i+dot(i,C.xxx);
+        vec3 g=step(x0.yzx,x0.xyz);vec3 l=1.0-g;vec3 i1=min(g.xyz,l.zxy);vec3 i2=max(g.xyz,l.zxy);
+        vec3 x1=x0-i1+C.xxx;vec3 x2=x0-i2+C.yyy;vec3 x3=x0-D.yyy;i=mod289(i);
+        vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
+        float n_=0.142857142857;vec3 ns=n_*D.wyz-D.xzx;
+        vec4 j=p-49.0*floor(p*ns.z*ns.z);vec4 x_=floor(j*ns.z);vec4 y_=floor(j-7.0*x_);
+        vec4 x=x_*ns.x+ns.yyyy;vec4 y=y_*ns.x+ns.yyyy;vec4 h=1.0-abs(x)-abs(y);
+        vec4 b0=vec4(x.xy,y.xy);vec4 b1=vec4(x.zw,y.zw);
+        vec4 s0=floor(b0)*2.0+1.0;vec4 s1=floor(b1)*2.0+1.0;vec4 sh=-step(h,vec4(0.0));
+        vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+        vec3 p0=vec3(a0.xy,h.x);vec3 p1=vec3(a0.zw,h.y);vec3 p2=vec3(a1.xy,h.z);vec3 p3=vec3(a1.zw,h.w);
+        vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+        p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+        vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);m=m*m;
+        return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));}
+      vec3 snoiseVec3(vec3 x){return vec3(snoise(x),snoise(x+vec3(123.4,567.8,910.1)),snoise(x+vec3(-456.7,234.1,-678.9)));}
+      vec3 curl(vec3 p){const float e=0.12;vec3 dx=vec3(e,0.0,0.0),dy=vec3(0.0,e,0.0),dz=vec3(0.0,0.0,e);
+        vec3 px0=snoiseVec3(p-dx),px1=snoiseVec3(p+dx);vec3 py0=snoiseVec3(p-dy),py1=snoiseVec3(p+dy);vec3 pz0=snoiseVec3(p-dz),pz1=snoiseVec3(p+dz);
+        float x=py1.z-py0.z-pz1.y+pz0.y;float y=pz1.x-pz0.x-px1.z+px0.z;float z=px1.y-px0.y-py1.x+py0.x;
+        return normalize(vec3(x,y,z)/(2.0*e));}
+
+      void main(){
+        float t = uTime*0.06 + aSeed;
+
+        /* state A: chaos (curl-noise drift) */
+        vec3 chaos = position + curl(position*0.12 + vec3(0.0,0.0,uTime*0.03)) * 1.7 * uTurb;
+        chaos.y += sin(t*0.6)*0.4;
+
+        /* state B: tilted elliptical orbits */
+        float th = aOrbPS.x + uTime*aOrbPS.y;
+        vec3 orbit = aOrbX*cos(th) + aOrbY*sin(th);
+
+        /* state C: infinity stream (lemniscate, particles flow along it) */
+        float uu = aStream.x + uTime*0.28*(0.8+0.4*fract(aSeed*0.13));
+        float s = sin(uu), c = cos(uu);
+        float den = 1.0 + s*s;
+        vec3 lem = vec3((c/den)*8.6, (s*c/den)*10.5, sin(uu*2.0+aSeed)*0.5);
+        /* slight x-tilt so the loop reads as 3D */
+        float ct = 0.94, st = 0.34;
+        lem = vec3(lem.x, lem.y*ct - lem.z*st, lem.y*st + lem.z*ct);
+        vec3 stream = lem + aStrOff * (0.15 + 0.55*aStream.y);
+
+        float m1 = smoothstep(0.0, 1.0, uM1);
+        float m2 = smoothstep(0.0, 1.0, uM2);
+        vec3 p = mix(mix(chaos, orbit, m1), stream, m2);
+
+        vShade = aShade;
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        float dist = -mv.z;
+        vAlpha = smoothstep(26.0, 6.0, dist);
+        gl_PointSize = aSize * uPix * (14.0/dist) * (1.0 + m2*0.35);
+        gl_Position = projectionMatrix * mv;
+      }`;
+
+    const frag = /* glsl */`
+      varying float vShade, vAlpha;
+      uniform vec3 uClay, uSand, uGlow;
+      uniform float uM2;
+      void main(){
+        vec2 uv = gl_PointCoord - 0.5;
+        float d = length(uv);
+        float a = smoothstep(0.5, 0.0, d);
+        a = pow(a, 1.6);
+        vec3 col = mix(uClay, uSand, smoothstep(0.0, 0.6, vShade));
+        col = mix(col, uGlow, smoothstep(0.7, 1.0, vShade));
+        col = mix(col, uGlow, uM2*0.3);
+        gl_FragColor = vec4(col, a * vAlpha * 0.85);
+      }`;
+
+    const mat = new THREE.ShaderMaterial({
+      uniforms: {
+        uTime:{value:0}, uPix:{value:renderer.getPixelRatio()},
+        uTurb:{value:1}, uM1:{value:0}, uM2:{value:0},
+        uClay:{value:new THREE.Color(0xC2603F)},
+        uSand:{value:new THREE.Color(0xE9DCC9)},
+        uGlow:{value:new THREE.Color(0xF0A878)}
+      },
+      vertexShader: vert, fragmentShader: frag,
+      transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
+    });
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    function resize(){
+      const w = innerWidth, h = innerHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      mat.uniforms.uPix.value = renderer.getPixelRatio();
+    }
+    addEventListener("resize", resize); resize();
+
+    addEventListener("pointermove", (e) => {
+      mouse.x = e.clientX/innerWidth - 0.5;
+      mouse.y = e.clientY/innerHeight - 0.5;
+    }, {passive:true});
+
+    three = { renderer, scene, camera, points, mat };
+  } catch (err) {
+    canvas.style.display = "none"; /* poster stays; page fully usable */
+  }
+
+  /* render loop on the gsap ticker (shared clock with Lenis) */
+  if (three) {
+    let elapsed = 0, last = 0, rot = 0;
+    gsap.ticker.add((t) => {
+      if (document.hidden) { last = t; return; }
+      const dt = Math.min(t - last, 0.05); last = t;
+      elapsed += dt;
+      three.mat.uniforms.uTime.value = elapsed;
+      three.mat.uniforms.uTurb.value = U.turb;
+      three.mat.uniforms.uM1.value = U.m1;
+      three.mat.uniforms.uM2.value = U.m2;
+      cam.x += (mouse.x*3.2 - cam.x)*0.04;
+      cam.y += (-mouse.y*2.0 - cam.y)*0.04;
+      three.camera.position.set(U.camX + cam.x, U.camY + cam.y, U.camZ);
+      three.camera.lookAt(0,0,0);
+      /* idle drift only in chaos; unwind so the orbit/stream states stay face-on */
+      rot += dt * 0.02 * (1 - U.m1);
+      three.points.rotation.y = rot * (1 - Math.max(U.m1, U.m2));
+      canvas.style.opacity = U.fade;
+      three.renderer.render(three.scene, three.camera);
+    });
+  }
+
+  /* ---------------- story choreography ---------------- */
+  /* split beat paragraphs into word spans for the progressive reveal */
+  const DIM = "rgba(244,241,234,0.32)";
+  function splitWords(el){
+    const text = el.textContent;
+    el.setAttribute("aria-label", text);
+    const holder = document.createElement("span");
+    holder.setAttribute("aria-hidden", "true");
+    text.split(/\s+/).filter(Boolean).forEach((w, i) => {
+      const s = document.createElement("span");
+      s.className = "w"; s.textContent = (i ? " " : "") + w;
+      s.style.color = DIM;
+      holder.appendChild(s);
+    });
+    el.textContent = ""; el.appendChild(holder);
+    return [...holder.children];
+  }
+  const w1 = splitWords(document.querySelector("#b1 .bp"));
+  const w2 = splitWords(document.querySelector("#b2 .bp"));
+  const w3 = splitWords(document.querySelector("#b3 .bp"));
+  const BONE = "#F4F1EA";
+
+  gsap.set(["#b1 .binner", "#b2 .binner", "#b3 .binner"], { autoAlpha: 0 });
+
+  const tl = gsap.timeline({
+    defaults: { ease: "none" },
+    scrollTrigger: { trigger: "#story", start: "top top", end: "bottom bottom", scrub: 1 }
+  });
+  tl.to("#b0 .binner", { autoAlpha: 0, y: -46, duration: 8 }, 14)
+    .to(".scrollcue", { autoAlpha: 0, duration: 4 }, 14)
+    .to(U, { turb: 1.8, duration: 14 }, 16)
+    .fromTo("#b1 .binner", { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 8 }, 24)
+    .to(w1, { color: BONE, duration: 5, stagger: { amount: 10 } }, 30)
+    .to("#b1 .binner", { autoAlpha: 0, y: -46, duration: 8 }, 46)
+    .to(U, { m1: 1, duration: 18, ease: "power2.inOut" }, 42)
+    .to(U, { turb: 0.5, camZ: 12.2, duration: 18 }, 42)
+    .fromTo("#b2 .binner", { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 8 }, 54)
+    .to(w2, { color: BONE, duration: 4, stagger: { amount: 7 } }, 57)
+    .to("#b2 .binner", { autoAlpha: 0, y: -46, duration: 8 }, 68)
+    .to(U, { m2: 1, duration: 16, ease: "power2.inOut" }, 66)
+    .to(U, { camZ: 13.6, camY: 0.6, duration: 16 }, 66)
+    .fromTo("#b3 .binner", { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 8 }, 76)
+    .to(w3, { color: BONE, duration: 5, stagger: { amount: 9 } }, 82)
+    .to({}, { duration: 8 }, 92); /* hold */
+
+  /* canvas becomes ambient dust once the story hands off */
+  gsap.to(U, { fade: 0.15, ease: "none",
+    scrollTrigger: { trigger: "#services", start: "top 95%", end: "top 35%", scrub: true } });
+
+  /* services lead gets the same progressive reveal, scrubbed by its own position */
+  const wLead = splitWords(document.getElementById("services-lead"));
+  gsap.to(wLead, { color: BONE, duration: 5, stagger: { amount: 10 }, ease: "none",
+    scrollTrigger: { trigger: "#services-lead", start: "top 82%", end: "top 40%", scrub: true } });
+
+  /* gentle enters for conventional sections (no scrub, fire once) */
+  gsap.utils.toArray("[data-enter]").forEach((el) => {
+    gsap.from(el, { y: 26, autoAlpha: 0, duration: 0.9, ease: "expo.out",
+      scrollTrigger: { trigger: el, start: "top 88%" } });
+  });
+}
+</script>
+</body>
+</html>
